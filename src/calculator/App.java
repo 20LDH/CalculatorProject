@@ -1,5 +1,6 @@
 package calculator;
 import java.util.Scanner;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -15,24 +16,24 @@ public class App {
             System.out.print("숫자 입력: ");
             int num2 = scanner.nextInt();
 
-            int result = 0;
-            if (cal == '+') {
-                result = num1 + num2;
-            } else if (cal == '-') {
-                result = num1 - num2;
-            } else if (cal == '*') {
-                result = num1 * num2;
-            } else if (cal == '/') {
-                if (num2 != 0) {          //입력값이 0이 아닐 때
-                    result = num1 / num2;
-                } else {                // 나눗셈시 분모가 0인 경우 방지
-                    System.out.println("0으로 나눌 수 없습니다.");
-                }
-            }
+            double result = calc.calculate(num1, num2, cal); // Calculator.java가 연산을 하고
             System.out.println("결과: " + result);
+
+            System.out.println("현재까지 저장된 결과들: " + calc.getResults());
 
             System.out.println("더 계산하시겠습니까? 아무키나 입력하세요. (exit 입력 시 종료)");
             input = scanner.next();    // 이미 위에 input이 선언됐기 때문에 자료형 필요 x
+
+            System.out.print("가장 먼저 저장된 결과를 삭제하시겠습니까? (remove 입력 시 삭제): ");
+            String command = scanner.next();
+
+            if (command.equals("remove")) {
+                // [ ] 생성한 인스턴스(calc)를 통해 삭제 메서드 활용
+                calc.removeResult();
+
+                // 삭제 후 상태를 확인하기 위해 Getter 호출
+                System.out.println("현재 저장된 결과 목록: " + calc.getResults());
+            }
         }
     }
 }
