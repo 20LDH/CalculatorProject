@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Calculator {
 
-    public  List<Integer> results = new ArrayList<>();
+    private   List<Integer> results = new ArrayList<>();
     public  Integer calculate(int num1, int num2, char symbol) {
         int result = 0;
 
@@ -28,4 +28,9 @@ public class Calculator {
         results.add(result);  // 결과 저장하기 위함
         return result; // 얘는 결과 전달만함
     }
+
+    public List<Integer> getResults() {  //
+        return results;
+    }
+
 }
