@@ -1,0 +1,30 @@
+package calculator2.step2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Calculator {
+
+    public  List<Integer> results = new ArrayList<>();
+    public  Integer calculate(int num1, int num2, char symbol) {
+        int result = 0;
+
+        if (symbol == '+') {
+            result = num1 + num2;
+        } else if (symbol == '-') {
+            result = num1 - num2;
+        } else if (symbol == '*') {
+            result = num1 * num2;
+        } else if (symbol == '/') {
+            if (num2 != 0) {
+                result = num1 / num2;
+            } else {            // 나눗셈시 분모가 0인 경우 방지
+                throw new ArithmeticException(("0으로 나눌 수 없습니다."));
+            }
+        }
+        else {
+            throw new ArithmeticException(("사친연산 기호가 아닙니다."));
+        }
+        return result;
+    }
+}

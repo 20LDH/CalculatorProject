@@ -1,4 +1,4 @@
-package calculator2;
+package calculator2.step2;
 
 import java.util.Scanner;
 
