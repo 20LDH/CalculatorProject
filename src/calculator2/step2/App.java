@@ -30,6 +30,8 @@ public class App {
                 return;
             }
 
+            Integer calculate = calculator.calculate(num1, num2, symbol);
+
             System.out.println("결과 = " + result);
             System.out.println("종료하려면 exit 입력 그렇지 않으면 아무 글자나 입력하세요.");
             input = sc.next();

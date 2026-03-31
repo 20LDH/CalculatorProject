@@ -25,6 +25,7 @@ public class Calculator {
         else {
             throw new ArithmeticException(("사친연산 기호가 아닙니다."));
         }
-        return result;
+        results.add(result);  // 결과 저장하기 위함
+        return result; // 얘는 결과 전달만함
     }
 }
