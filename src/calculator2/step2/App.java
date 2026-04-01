@@ -32,8 +32,16 @@ public class App {
 
             Integer calculate = calculator.calculate(num1, num2, symbol);
 
+
+            System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? 네 / 아니요 ");
+            String removeInput = sc.next();
+            if ("네".equals(removeInput)) {
+                calculator.removeResult();  // 컬렉션에서 가장 먼저 들어온 값 제거
+                System.out.println("가장 먼저 저장된 결과가 삭제되었습니다.");
+            }
+
+            System.out.println("결과 = " + calculate);
             System.out.println("현재까지 저장된 결과들: " + calculator.getResults());
-            System.out.println("결과 = " + result);
             System.out.println("종료하려면 exit 입력 그렇지 않으면 아무 글자나 입력하세요.");
             input = sc.next();
         }
