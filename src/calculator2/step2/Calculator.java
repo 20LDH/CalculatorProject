@@ -35,9 +35,6 @@ public class Calculator {
     public void removeResult() {     //기록 삭제 기능
         if (!results.isEmpty()) {    // 컬렉션이 비어있지 않은지 확인
             results.remove(0);  // 컬렉션에서 가장 먼저 들어온 값 제거
-            System.out.println("가장 먼저 저장된 결과가 삭제되었습니다.");
-        } else {
-            System.out.println("삭제할 결과가 없습니다.");
         }
     }
 
