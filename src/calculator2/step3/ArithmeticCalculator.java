@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArithmeticCalculator {
-    private List<Integer> results = new ArrayList<>();
-    public  Integer calculate(int num1, int num2, OperatorType type) {
-        int result = 0;
+    private List<Double> results = new ArrayList<>();
+    public  Double calculate(double num1, double num2, OperatorType type) {
+        double result = 0;
+
 
         if (type == OperatorType.ADD) {
             result = num1 + num2;
@@ -28,7 +29,7 @@ public class ArithmeticCalculator {
         return result; // 얘는 결과 전달만함
     }
 
-    public List<Integer> getResults() {  //
+    public List<Double> getResults() {  //
         return results;
     }
     public void removeResult() {     //기록 삭제 기능

@@ -5,12 +5,11 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArithmeticCalculator calculator = new ArithmeticCalculator(); //인스턴스화 calculator가 가지고있는 필드나 메서드 사용가능
-        int result = 0; //결과 담을 변수 초기화
         String input = "";
 
         while (!input.equals("exit")) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
-            int num1 = sc.nextInt();
+            double num1 = sc.nextInt();
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
 
             if (num1 < 0) {
@@ -22,7 +21,7 @@ public class App {
             OperatorType operator = OperatorType.fromSymbol(symbol);
 
             System.out.print("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            double num2 = sc.nextInt();
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
 
             if (num2 < 0) {
@@ -30,7 +29,7 @@ public class App {
                 return;
             }
 
-            Integer calculate = calculator.calculate(num1, num2, operator);
+            Double calculate = calculator.calculate(num1, num2, operator);
 
             System.out.println("결과 = " + calculate);
             System.out.println("현재까지 저장된 결과들: " + calculator.getResults());
